@@ -1,0 +1,25 @@
+related work
+
+Sebagai referensi, beberapa makalah tentang kriptografi [2] - [6] telah dipelajari oleh penulis dan menemukan bahwa menggunakan kriptografi dalam mengenkripsi data dapat memberikan tingkat keamanan yang lebih tinggi pada basis data. Enkripsi dilakukan pada data sebelum dimasukkan ke dalam basis data. Penggunaan MySql sebagai DBMS cukup populer sehingga penulis memutuskan untuk menerapkannya dalam tulisan ini dan untuk enkripsinya menggunakan Caesar Cipher yang dimodifikasi [7].
+
+
+langkah enkripsi :
+input teks dan kunci sebanyak 3 kunci
+setiap 1 kata hanya menggunakan 1 kunci sesuai indeksnya
+jika indeks kata tersebut melebihi 3, maka kunci=indeks kata modulo 3
+substitusi teks dengan tabel per huruf sesuai rumus Cv= (pv + bk) mod5, Cc = (pc + bk) mod 14 
+kemudian simpan teks yang terenkripsi ke database
+
+
+langkah dekripsi :
+input kunci sebanyak 3
+ambil data dari database
+substitusi teks dengan tabel per huruf sesuai rumus Cv= (pv - bk) mod5, Cc = (pc - bk) mod 14 
+kemudian tampilkan data terdekripsi 
+
+
+hasil percobaan
+Kita coba inputkan teks "kriptografi sangat menyenangkan" dengan kunci 5, 6, 7. Maka hasil enkripsinya "dfecjagfuwe tangam finyinongmon"
+screenshot sebelum dan sesudah
+
+kesimpulan
